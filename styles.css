@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color:#25433C;
+    margin: 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+}
+
+header {
+    background-color: #d3ddcb;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+main {
+    margin: 0;
+    position: relative;
+    background-color: #f8f5e9;
+}
+
+footer {
+    background-color: #f8f5e9;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+}
+
+
+hr {
+    border: dotted #84996F 6px;
+    border-bottom: none;
+    width: 10%;
+    margin-left: 45%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#my-image {
+    border-radius: 50%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#my-image:hover {
+    transition: transform 2s ease;
+    transform: rotate(360deg);
+}
+
+#my-biography {
+    margin: 5%;
+    text-align:justify;
+}
+
+#contact-info {
+    background-color: #d3ddcb;
+    text-align: center;
+    padding: 2%;
+}
+
+#my-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#my-images h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#my-images p {
+    margin-left: 8%;
+    margin-top: 5%;
+    margin-right: 8%;
+}
+
+#Navigation {
+    padding-top: 2%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+#scrollToTop a {
+    color: white;
+    text-decoration: none;
+}
+
+#scrollToTop {
+    background-color: #25433C;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.image-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    min-width: 300px;
+}
+
+.image-description {
+    max-width: 100%;
+}
+
+.image-card p {
+    text-align:justify;
+    margin: 2%;
+    max-width: 100%
+}
+
+.bird {
+    background:url("birds.png");
+    width: 80px;
+    height: 250px;
+    position:absolute;
+}
+
+.bird-1 {
+    top: 25%;
+    left: 0;
+    animation: birdFly 1s steps(4) infinite, birdMove 10s linear infinite alternate;
+}
+
+.bird-2 {
+    top: -45%;
+    left: -10%;
+    animation: birdFly 1s steps(4) infinite, birdMove 10s linear infinite alternate;
+    animation-delay: 3s;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.card {
+    background-color: #d3ddcb;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Bird Flying Animation */
+
+@keyframes birdFly {
+    0%{
+        background-position-x: 0;
+    }
+
+    100%{
+        background-position-x: 78%;
+    }
+}
+
+/* Bird moving Animation */
+
+@keyframes birdMove {
+    0%{
+        left: 0%;
+    }
+
+    100%{
+        left: 90%;
+    }
+}
+
+
+@media (max-width: 950px) {
+    .image-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .bird-1 {
+        top: 50%;
+        left: 0;
+        animation: birdFly 1s steps(4) infinite, birdMove 10s linear infinite alternate;
+    }
+    
+    .bird-2 {
+        top: -27%;
+        left: -20%;
+        animation: birdFly 1s steps(4) infinite, birdMove 10s linear infinite alternate;
+        animation-delay: 3s;
+    }    
+
+    @keyframes birdFly {
+        0% {
+            background-position-x: 0;
+        }
+
+        100% {
+            background-position-x: 78%;
+        }
+    }
+
+    @keyframes birdMove {
+        0% {
+            left: 0%;
+        }
+
+        100% {
+            left: 75%; /* Adjust to keep the bird within the viewport */
+        }
+    }
+}
